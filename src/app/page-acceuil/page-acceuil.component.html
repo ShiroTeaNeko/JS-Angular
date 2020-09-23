@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<div class="form-group">
+    <label for=""> Rechercher votre ville
+        <input style="margin-right:10px;" type="text" id="ville" name="ville" [(ngModel)] = "ville">
+    </label>
+    <button (click)="getData(ville)" class="btn btn-primary">Rechercher</button>
+</div>
+<br>
+
+<div *ngFor="let concert of list" class="">
+   Nom: {{ concert.displayName }}<br>
+   Type d'évenement : {{  concert.type}}<br>
+   Lien de reservation de billet : {{ concert.uri }}<br>
+   Salle attribué : {{ concert.venue.displayName }}<br>
+   Ville : {{ concert.location.city }}<br>
+   Date et Heure de Début : {{ concert.start.date }} , {{ concert.start.time }}<br>
+
+   <br>
+</div>
+
+
+
+
